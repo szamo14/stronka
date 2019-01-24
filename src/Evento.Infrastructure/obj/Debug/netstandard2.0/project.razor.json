@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "e:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj",
+  "TargetFramework": "netstandard2.0",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

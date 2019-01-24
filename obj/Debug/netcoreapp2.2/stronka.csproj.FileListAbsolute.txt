@@ -1,0 +1,14 @@
+E:\appC#\sklep\stronka\bin\Debug\netcoreapp2.2\stronka.deps.json
+E:\appC#\sklep\stronka\bin\Debug\netcoreapp2.2\stronka.runtimeconfig.json
+E:\appC#\sklep\stronka\bin\Debug\netcoreapp2.2\stronka.runtimeconfig.dev.json
+E:\appC#\sklep\stronka\bin\Debug\netcoreapp2.2\stronka.dll
+E:\appC#\sklep\stronka\bin\Debug\netcoreapp2.2\stronka.pdb
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.csprojAssemblyReference.cache
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.csproj.CoreCompileInputs.cache
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.RazorAssemblyInfo.cache
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.RazorAssemblyInfo.cs
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.AssemblyInfoInputs.cache
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.AssemblyInfo.cs
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.RazorTargetAssemblyInfo.cache
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.dll
+E:\appC#\sklep\stronka\obj\Debug\netcoreapp2.2\stronka.pdb
