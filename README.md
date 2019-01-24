@@ -1,2 +1,2 @@
 # stronka
-kurs
+
