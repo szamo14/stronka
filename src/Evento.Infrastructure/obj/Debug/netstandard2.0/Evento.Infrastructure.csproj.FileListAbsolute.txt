@@ -1,0 +1,12 @@
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\bin\Debug\netstandard2.0\Evento.Infrastructure.deps.json
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\bin\Debug\netstandard2.0\Evento.Infrastructure.dll
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\bin\Debug\netstandard2.0\Evento.Infrastructure.pdb
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\bin\Debug\netstandard2.0\Evento.Core.dll
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\bin\Debug\netstandard2.0\Evento.Core.pdb
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.csprojAssemblyReference.cache
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.csproj.CoreCompileInputs.cache
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.AssemblyInfoInputs.cache
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.AssemblyInfo.cs
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.csproj.CopyComplete
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.dll
+E:\appC#\sklep\stronka\src\Evento.Infrastructure\obj\Debug\netstandard2.0\Evento.Infrastructure.pdb
