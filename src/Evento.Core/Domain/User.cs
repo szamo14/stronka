@@ -17,6 +17,7 @@ namespace Evento.Core.Domain
 
         public User (Guid id, string role, string name, string email, string password)
         {
+            // data user
             ID = id;
             Role = role;
             Name = name;
