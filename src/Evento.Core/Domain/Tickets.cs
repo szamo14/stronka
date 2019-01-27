@@ -14,7 +14,6 @@ namespace Evento.Core.Domain
 
         protected Ticket()
         {
-
         }
         public  Ticket( Event @event, int seating, decimal price)
         {
