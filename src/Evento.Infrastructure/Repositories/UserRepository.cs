@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Evento.Core.Domain;
 using Evento.Core.Repositories;
@@ -8,34 +9,28 @@ namespace Evento.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public async Task AddAsync(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<Event>> BrowseAsync(string name = "")
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task DeleteAsync(User user)
-        {
-            throw new NotImplementedException();
-        }
+        private static readonly ISet<User> _users= new HashSet<User>();
 
         public async Task<User> GetAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+            => await Task.FromResult(_users.SingleOrDefault(x=>x.ID==id));
+        
 
         public async Task<User> GetAsync(string email)
+            => await Task.FromResult(_users.SingleOrDefault(x=>x.Email.ToLowerInvariant()==email.ToLowerInvariant()));
+        
+        public async Task AddAsync(User user)
         {
-            throw new NotImplementedException();
+            _users.Add(@user);
+            await Task.CompletedTask;
         }
-
         public async Task UpdateAsync(User user)
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
+        }
+        public async Task DeleteAsync(User user)
+        {
+            _users.Remove(@user);
+            await Task.CompletedTask;
         }
     }
 }
