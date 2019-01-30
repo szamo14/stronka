@@ -17,7 +17,7 @@ namespace Evento.Core.Domain
         }
         public  Ticket( Event @event, int seating, decimal price)
         {
-            EventID = @event.ID;
+            EventID = @event.Id;
             Seating = seating;
             Price = price;
             

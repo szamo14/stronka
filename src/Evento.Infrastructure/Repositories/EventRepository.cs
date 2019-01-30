@@ -12,7 +12,7 @@ namespace Evento.Infrastructure.Repositories
         private static readonly ISet<Event> _events = new HashSet<Event>();
         
         public async Task<Event> GetAsync(Guid id)
-            => await Task.FromResult(_events.SingleOrDefault(x=>x.ID==id));
+            => await Task.FromResult(_events.SingleOrDefault(x=>x.Id==id));
         public async Task<Event> GetAsync(string name)
             => await Task.FromResult(_events.SingleOrDefault(x=>x.Name.ToLowerInvariant()==name.ToLowerInvariant()));
          public async Task<IEnumerable<Event>> BrowseAsync(string name = "")

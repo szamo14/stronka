@@ -22,7 +22,7 @@ namespace Evento.Core.Domain
 
         public Event ( Guid id, string name, string description, DateTime startData, DateTime endDate)
         {
-            ID = id;
+            Id = id;
             Name = name;
             Description = description;
             StartDate = startData;
