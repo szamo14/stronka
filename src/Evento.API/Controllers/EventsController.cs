@@ -21,8 +21,13 @@ namespace Evento.API.Controllers
             return Json(events);
         }
         [HttpPost]
+        public async Task<IActionResult> Post([FromBody]CreateEvent command)
+        {
+            command.EventId = Guid.NewGuid();
             await _eventService.CreateAsync(command.EventId, command.Name, command.Description, command.StartDate, command.EndDate);
+
             return Created($"/events/{command.EventId}",null);
+        
         }
     }
 }
