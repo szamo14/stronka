@@ -5,9 +5,10 @@ using AutoMapper;
 using Evento.Core.Repositories;
 using Evento.Infrastructure.DTO;
 
+
 namespace Evento.Infrastructure.Services
 {
-    public class EventService : IEventSerive
+    public class EventService : IEventService
     {
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;

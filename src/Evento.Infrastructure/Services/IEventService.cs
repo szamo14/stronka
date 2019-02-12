@@ -6,7 +6,7 @@ using Evento.Infrastructure.DTO;
 
 namespace Evento.Infrastructure.Services
 {
-    public interface IEventSerive
+    public interface IEventService
     {
          Task<EventDto> GetAsync(Guid id);
          Task<EventDto> GetAsync(string name);
