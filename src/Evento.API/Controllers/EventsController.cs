@@ -15,6 +15,7 @@ namespace Evento.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get(string name)
         {
+            
             var events = await _eventService.BrowseAsync(name);
             return Json(events);
         }
