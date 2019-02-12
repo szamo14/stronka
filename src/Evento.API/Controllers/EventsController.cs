@@ -20,6 +20,9 @@ namespace Evento.API.Controllers
             var events = await _eventService.BrowseAsync(name);
             return Json(events);
         }
-            
+        [HttpPost]
+            await _eventService.CreateAsync(command.EventId, command.Name, command.Description, command.StartDate, command.EndDate);
+            return Created($"/events/{command.EventId}",null);
+        }
     }
 }
