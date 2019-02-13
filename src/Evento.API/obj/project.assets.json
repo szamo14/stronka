@@ -12144,11 +12144,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\appC#\\sklep\\stronka\\src\\Evento.API\\Evento.API.csproj",
+      "projectUniqueName": "E:\\appC#\\sklep\\stronka\\src\\Evento.API\\Evento.API.csproj",
       "projectName": "Evento.API",
-      "projectPath": "e:\\appC#\\sklep\\stronka\\src\\Evento.API\\Evento.API.csproj",
+      "projectPath": "E:\\appC#\\sklep\\stronka\\src\\Evento.API\\Evento.API.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "e:\\appC#\\sklep\\stronka\\src\\Evento.API\\obj\\",
+      "outputPath": "E:\\appC#\\sklep\\stronka\\src\\Evento.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12165,8 +12165,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "e:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj": {
-              "projectPath": "e:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj"
+            "E:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj": {
+              "projectPath": "E:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj"
             }
           }
         }
