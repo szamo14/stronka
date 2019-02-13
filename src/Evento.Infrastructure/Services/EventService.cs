@@ -5,7 +5,7 @@ using AutoMapper;
 using Evento.Core.Domain;
 using Evento.Core.Repositories;
 using Evento.Infrastructure.DTO;
-
+using Evento.Infrastructure.Extensions;
 
 namespace Evento.Infrastructure.Services
 {
@@ -61,31 +61,23 @@ namespace Evento.Infrastructure.Services
                 throw new Exception($"Event named: '{name}' already exist");
             }
 
-            @event = await _eventRepository.GetAsync(id);
+            @event = await _eventRepository.GetOrFailAsync(id);
             
-            if(@event == null)
-            {
-                throw new Exception($"Event with id: '{id}' does not exist");
-            }
             @event.SetName(name);
             @event.SetDescription(description);
             await _eventRepository.UpdateAsync(@event);
         }
          public async Task AddTicketsAsync(Guid eventId, int amount, decimal price)
         {
-            var @event = await _eventRepository.GetAsync(eventId);
-            
-            if(@event == null)
-            {
-                throw new Exception($"Event with id: '{eventId}' does not exist");
-            }
+            var @event = await _eventRepository.GetOrFailAsync(eventId);
             @event.AddTickets(amount,price);
             await _eventRepository.UpdateAsync(@event);
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var @event = await _eventRepository.GetOrFailAsync(id);
+            await _eventRepository.DeleteAsync(@event);
         }
 
       
