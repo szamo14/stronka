@@ -9,5 +9,7 @@ namespace Evento.Infrastructure.Commands.Events
         public string Description { get; set; }
         public DateTime StartDate { get;  set; }
         public DateTime EndDate { get;  set; }
+        public int Ticekts { get; set; }
+        public decimal price { get; set;}
     }
 }
