@@ -23,7 +23,8 @@ namespace Evento.Core.Domain
         public Event ( Guid id, string name, string description, DateTime startData, DateTime endDate)
         {
             Id = id;
-            Name = name;
+            SetName(name);
+            SetDescription(description);
             Description = description;
             StartDate = startData;
             EndDate = endDate;
@@ -32,6 +33,25 @@ namespace Evento.Core.Domain
 
         }
 
+        public void SetName(string name)
+        {
+            if(string.IsNullOrWhiteSpace(name))
+            {
+                throw new Exception($"event with id : '{Id}' name can not be empty");
+            }
+            Name = name;
+            UpdatedAt = DateTime.UtcNow;
+        }
+        public void SetDescription(string description)
+        {
+             if(string.IsNullOrWhiteSpace(description))
+            {
+                throw new Exception($"event with id : '{Id}' description can not be empty");
+            }
+            Description = description;
+            UpdatedAt = DateTime.UtcNow;
+
+        }
         public void AddTickets( int amount, decimal price) 
         {
             var seating = _tickets.Count + 1;// pierwsze miejsce i nastepne 

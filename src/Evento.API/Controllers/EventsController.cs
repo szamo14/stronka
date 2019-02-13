@@ -30,5 +30,15 @@ namespace Evento.API.Controllers
             return Created($"/events/{command.EventId}",null);
         
         }
+        [HttpPut("{EventId")]
+        public async Task<IActionResult> Put(Guid eventId, [FromBody]UpdateEvent command)
+        {
+            command.EventId = Guid.NewGuid();
+            await _eventService.UpdateAsync(command.EventId, command.Name, command.Description);
+            
+
+            return NoContent();
+        
+        }
     }
 }
