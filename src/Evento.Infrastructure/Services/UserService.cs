@@ -19,10 +19,20 @@ namespace Evento.Infrastructure.Services
             {
                 throw new Exception($"user with emial : '{email}' already exist");
             }
-
             user = new User(userId, role, name, email, password);
             await _userRepository.AddAsync(user);
-
+        }
+          public async Task LoginAsync(string email, string password)
+        {
+            var user = await _userRepository.GetAsync(email);
+            if(user == null)
+            {
+                throw new Exception("Incalid credenital");
+            }
+            if(user.Password != password)
+            {
+                throw new Exception("Incalid credenital");
+            }
         }
     }
 }

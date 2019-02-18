@@ -22,7 +22,7 @@ namespace Evento.Infrastructure.Repositories
             => await Task.FromResult(Events.SingleOrDefault(x=>x.Id==id));
         public async Task<Event> GetAsync(string name)
             => await Task.FromResult(Events.SingleOrDefault(x=>x.Name.ToLowerInvariant()==name.ToLowerInvariant()));
-         public async Task<IEnumerable<Event>> BrowseAsync(string name = "")
+        public async Task<IEnumerable<Event>> BrowseAsync(string name = "")
         {
             var events = Events.AsEnumerable();
             if(!string.IsNullOrWhiteSpace(name))
