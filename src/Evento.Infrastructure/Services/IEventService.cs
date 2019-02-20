@@ -15,5 +15,6 @@ namespace Evento.Infrastructure.Services
          Task UpdateAsync (Guid id, string name, string description);
          Task AddTicketsAsync (Guid eventId, int amount, decimal price);
          Task DeleteAsync (Guid id);
+         
     }
 }
