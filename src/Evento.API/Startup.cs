@@ -35,12 +35,13 @@ namespace Evento.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddAuthorization();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(x=>x.SerializerSettings.Formatting = Formatting.Indented);
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddSingleton<IJwtHandler, JwtHandler>();
             services.AddSingleton(AutoMapperConfig.Initialize());
            //Tokens 
             var appSettingsSection = Configuration.GetSection("JwtSettings");
@@ -48,8 +49,8 @@ namespace Evento.API
             
 
             // configure jwt authentication
-            var appSettings = appSettingsSection.Get<JwtSettings>();
-            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            var appSettings = appSettingsSection.Get<IOptions<JwtSettings>>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Value.Secret);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
