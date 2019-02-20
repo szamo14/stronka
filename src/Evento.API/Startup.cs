@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Authentication;
 using Newtonsoft.Json;
 using System.Text;
 using Evento.Infrastructure.Settings;
+using Microsoft.IdentityModel.Logging;
 
 namespace Evento.API
 {
