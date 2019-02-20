@@ -31,7 +31,7 @@ namespace Evento.Infrastructure.Services
             };
 
             var expires = now.AddMinutes(_jwtSettings.ExpiryMinutes);
-            var singningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_jwtSettings.Secret)),
+            var singningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
                 SecurityAlgorithms.HmacSha256);
             
             var jwt = new JwtSecurityToken(

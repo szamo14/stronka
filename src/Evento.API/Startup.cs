@@ -49,8 +49,8 @@ namespace Evento.API
             
 
             // configure jwt authentication
-            var appSettings = appSettingsSection.Get<IOptions<JwtSettings>>();
-            var key = Encoding.ASCII.GetBytes(appSettings.Value.Secret);
+            var appSettings = appSettingsSection.Get<JwtSettings>();
+            var key = Encoding.UTF8.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
