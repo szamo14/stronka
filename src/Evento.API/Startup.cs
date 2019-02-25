@@ -50,8 +50,8 @@ namespace Evento.API
             
 
             // configure jwt authentication
-            var appSettings = appSettingsSection.Get<IOptions<JwtSettings>>();
-            var key = Encoding.UTF8.GetBytes(appSettings.Value.Secret);
+            var appSettings = appSettingsSection.Get<JwtSettings>();
+            var key = Encoding.UTF8.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -85,7 +85,7 @@ namespace Evento.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
         }
