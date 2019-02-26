@@ -6687,11 +6687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj",
+      "projectUniqueName": "E:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj",
       "projectName": "Evento.Infrastructure",
-      "projectPath": "e:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj",
+      "projectPath": "E:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\Evento.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "e:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\obj\\",
+      "outputPath": "E:\\appC#\\sklep\\stronka\\src\\Evento.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6708,8 +6708,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "e:\\appC#\\sklep\\stronka\\src\\Evento.Core\\Evento.Core.csproj": {
-              "projectPath": "e:\\appC#\\sklep\\stronka\\src\\Evento.Core\\Evento.Core.csproj"
+            "E:\\appC#\\sklep\\stronka\\src\\Evento.Core\\Evento.Core.csproj": {
+              "projectPath": "E:\\appC#\\sklep\\stronka\\src\\Evento.Core\\Evento.Core.csproj"
             }
           }
         }
