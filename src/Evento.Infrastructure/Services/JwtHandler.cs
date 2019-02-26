@@ -35,7 +35,7 @@ namespace Evento.Infrastructure.Services
                 SecurityAlgorithms.HmacSha256);
             
             var jwt = new JwtSecurityToken(
-                issuer: _jwtSettings.Issuer,
+                //issuer: _jwtSettings.Issuer,
                 claims: claims,
                 notBefore: now,
                 expires: expires,

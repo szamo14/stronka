@@ -64,6 +64,34 @@ namespace Evento.Core.Domain
              }
         }
 
+        public void PurchesTickets(User user, int amount)
+        {
+            if (AvaiableTickets.Count() < amount )
+            {
+                throw new Exception("not enough tickets");
+            }
+            var tickets = AvaiableTickets.Take(amount);
+            foreach(var ticket in tickets)
+            {
+                ticket.Purchase(user);
+            }
+
+        }
+
+          public void CancelrchesTickets(User user, int amount)
+        {
+           var tickets = PurchesedTickets.Where(x =>x.UserId == user.Id);
+            if(tickets.Count()<amount)
+            {
+                throw new Exception("not enough bought ticekts");
+            }
+            foreach(var ticket in tickets)
+            {
+                ticket.Cancel(user);
+            }
+
+            
+        }
 
     }
 }
