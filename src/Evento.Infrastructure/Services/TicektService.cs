@@ -1,24 +1,48 @@
 using System;
 using System.Threading.Tasks;
+using AutoMapper;
+using Evento.Core.Repositories;
 using Evento.Infrastructure.DTO;
+using Evento.Infrastructure.Extensions;
 
 namespace Evento.Infrastructure.Services
 {
     public class TicektService : ITicketService
     {
-        public Task CancelAsync(Guid userId, Guid eventId, int amount)
+        private IUserRepository _userRepository;
+        private IEventRepository _eventRepository;
+        private IMapper _mapper;
+
+        public TicektService(IUserRepository userRepository, IEventRepository eventRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _eventRepository = eventRepository;
+            _userRepository = userRepository; 
+            _mapper = mapper; 
+
+        }        
+        public async Task CancelAsync(Guid userId, Guid eventId, int amount)
+        {
+            var user = await _userRepository.GetOrFailAsync(userId);
+            var @event = await _eventRepository.GetOrFailAsync(eventId);
+            @event.CancelPurchesTickets(user,amount);
+            await _eventRepository.UpdateAsync(@event);
         }
 
-        public Task<TicketDto> GetAsync(Guid userId, Guid eventId, Guid ticketId)
+        public async Task<TicketDto> GetAsync(Guid userId, Guid eventId, Guid ticketId)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetOrFailAsync(userId);
+            var ticket = await _eventRepository.GetTicketOrFailAsync(eventId, ticketId);
+
+            return _mapper.Map<TicketDto>(ticket);
+
         }
 
-        public Task PurchesAsync(Guid userId, Guid eventId, int amount)
+        public async Task PurchesAsync(Guid userId, Guid eventId, int amount)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetOrFailAsync(userId);
+            var @event = await _eventRepository.GetOrFailAsync(eventId);
+            @event.PurchesTickets(user,amount);
+            await _eventRepository.UpdateAsync(@event);
         }
     }
 }

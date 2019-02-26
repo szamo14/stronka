@@ -78,7 +78,7 @@ namespace Evento.Core.Domain
 
         }
 
-          public void CancelrchesTickets(User user, int amount)
+          public void CancelPurchesTickets(User user, int amount)
         {
            var tickets = PurchesedTickets.Where(x =>x.UserId == user.Id);
             if(tickets.Count()<amount)
