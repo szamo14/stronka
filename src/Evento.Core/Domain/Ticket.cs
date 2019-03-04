@@ -15,7 +15,7 @@ namespace Evento.Core.Domain
         protected Ticket()
         {
         }
-        public  Ticket( Event @event, int seating, decimal price)
+        public  Ticket(Event @event, int seating, decimal price)
         {
             EventID = @event.Id;
             Seating = seating;

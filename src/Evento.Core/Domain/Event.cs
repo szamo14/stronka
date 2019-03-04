@@ -60,7 +60,9 @@ namespace Evento.Core.Domain
              for(var i=0; i<amount; i++)
              {
                   _tickets.Add(new Ticket(this, seating, price));
+                  
                   seating++; // inkrementacje miejsc 
+                  
              }
         }
 
