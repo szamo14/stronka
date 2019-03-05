@@ -5,6 +5,6 @@ namespace Evento.Infrastructure.DTO
 {
     public class EventDetailsDto : EventDto
     {
-        public IEnumerable<TicketDto> Ticekts{ get; set; }
+        public IEnumerable<TicketDto> Tickets { get; set; }
     }
 }

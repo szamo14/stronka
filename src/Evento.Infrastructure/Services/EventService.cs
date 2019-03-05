@@ -6,6 +6,8 @@ using Evento.Core.Domain;
 using Evento.Core.Repositories;
 using Evento.Infrastructure.DTO;
 using Evento.Infrastructure.Extensions;
+using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace Evento.Infrastructure.Services
 {
