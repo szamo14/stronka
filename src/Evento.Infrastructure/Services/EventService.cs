@@ -9,6 +9,7 @@ using Evento.Infrastructure.Extensions;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 
+
 namespace Evento.Infrastructure.Services
 {
     public class EventService : IEventService
