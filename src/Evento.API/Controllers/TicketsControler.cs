@@ -22,7 +22,7 @@ namespace Evento.API.Controllers
             var ticket = await _ticketService.GetAsync(UserId,eventId, ticketId);
             return Json(ticket);
         }
-        [HttpPost("purches/{amount}")]
+        [HttpPost("purchase/{amount}")]
         public async Task<IActionResult> Post(Guid eventId, int amount)
         {
             await _ticketService.PurchesAsync(UserId, eventId, amount);

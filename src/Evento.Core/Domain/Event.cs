@@ -82,18 +82,20 @@ namespace Evento.Core.Domain
 
           public void CancelPurchesTickets(User user, int amount)
         {
-           var tickets = PurchesedTickets.Where(x =>x.UserId == user.Id);
+           var tickets = GetTicketsPurchasedByUser(user);
             if(tickets.Count()<amount)
             {
                 throw new Exception("not enough bought ticekts");
             }
-            foreach(var ticket in tickets)
+            foreach(var ticket in tickets.Take(amount))
             {
                 ticket.Cancel(user);
             }
 
             
         }
+        public IEnumerable<Ticket> GetTicketsPurchasedByUser(User user)
+        =>PurchesedTickets.Where(x =>x.UserId == user.Id);
 
     }
 }
