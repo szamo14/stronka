@@ -39,12 +39,25 @@ namespace Evento.Infrastructure.Services
 
         }
 
-        public async Task<IEnumerable<TicketDto>> GetForUserAsync(Guid userId)
+        public async Task<IEnumerable<TicketDetailsDto>> GetForUserAsync(Guid userId)
         {
             var user = await _userRepository.GetOrFailAsync(userId);
             var events = await _eventRepository.BrowseAsync();
-            var ticket = events.SelectMany(x => x.GetTicketsPurchasedByUser(user));
-            return _mapper.Map<IEnumerable<TicketDto>>(ticket);
+            
+            var allTickets = new List<TicketDetailsDto>();
+            foreach (var @event in events)
+            {
+                var tickets = _mapper.Map<IEnumerable<TicketDetailsDto>>(@event.GetTicketsPurchasedByUser(user)).ToList();
+                tickets.ForEach(x => 
+                {
+                     x.EventId = @event.Id;
+                     x.EventName = @event.Name;
+                });
+                allTickets.AddRange(tickets);
+            }
+            return allTickets;
+            
+            
         }
 
         public async Task PurchesAsync(Guid userId, Guid eventId, int amount)
@@ -54,5 +67,7 @@ namespace Evento.Infrastructure.Services
             @event.PurchesTickets(user,amount);
             await _eventRepository.UpdateAsync(@event);
         }
+
+       
     }
 }
